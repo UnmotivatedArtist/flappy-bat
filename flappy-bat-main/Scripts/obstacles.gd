@@ -4,25 +4,25 @@ extends Node2D
 
 
 func _physics_process(delta: float) -> void:
-	### ADD COMMENT ABOUT WHAT THIS CODE DOES
+	### This controlls teh movement of the pillars on screen.
 	position.x -= speed * delta
 
 
 func _on_stalactite_body_entered(_body: Node2D) -> void:
-	### ADD COMMENT ABOUT WHAT THIS CODE DOES
+	### This resets the player once they collide with a pillar.
 	get_tree().call_deferred("reload_current_scene")
 
 
 func _on_stalagmite_body_entered(_body: Node2D) -> void:
-	### ADD COMMENT ABOUT WHAT THIS CODE DOES
+	### This resets the player once they collide with a pillar.
 	get_tree().call_deferred("reload_current_scene")
 
 
 func _on_score_body_entered(_body: Node2D) -> void:
-	### ADD COMMENT ABOUT WHAT THIS CODE DOES
+	### This increases the scroe whenever the player passes betwene the pillars.
 	Autoload.score += 1
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	### ADD COMMENT ABOUT WHAT THIS CODE DOES
+	### This deletes the pillars once they move off screen.
 	queue_free()
