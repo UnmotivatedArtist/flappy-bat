@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c734hjdf58kd0"]
+
+[ext_resource type="Texture2D" uid="uid://o50fnt1gsudj" path="res://Assets/Sprites/stal.png" id="1_f25h0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4emk0"]
+size = Vector2(4, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8g0ki"]
+size = Vector2(3, 23)
+
+[node name="Stalagmite" type="Area2D"]
+rotation = 3.14159
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7.99993, 26)
+rotation = -3.14159
+texture = ExtResource("1_f25h0")
+centered = false
+hframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.999932, 13)
+shape = SubResource("RectangleShape2D_4emk0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-2.50007, 11.5)
+shape = SubResource("RectangleShape2D_8g0ki")
